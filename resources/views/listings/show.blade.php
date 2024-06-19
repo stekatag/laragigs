@@ -44,13 +44,7 @@
         <i class="fa-solid fa-pencil"></i> Edit
       </a>
 
-      <form method="post" action="/listings/{{ $listing->id }}">
-        @csrf
-        @method('DELETE')
-        <button class="text-red-500">
-          <i class="fa-solid fa-trash"></i> Delete
-        </button>
-      </form>
+      <x-confirmation-dialog :action="url('/listings/' . $listing->id)" />
     </x-card>
   </div>
 </x-layout>

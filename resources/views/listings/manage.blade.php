@@ -23,13 +23,7 @@
                   Edit</a>
               </td>
               <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                <form method="post" action="/listings/{{ $listing->id }}">
-                  @csrf
-                  @method('DELETE')
-                  <button class="text-red-500">
-                    <i class="fa-solid fa-trash"></i> Delete
-                  </button>
-                </form>
+                <x-confirmation-dialog :action="url('/listings/' . $listing->id)" />
               </td>
             </tr>
           @endforeach
